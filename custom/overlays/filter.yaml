@@ -1,0 +1,6 @@
+cat custom/overlays/filter.yaml
+#@ load("@ytt:overlay", "overlay")
+
+#@overlay/match by=overlay.not_op(overlay.subset({"kind": "ClusterClass"})),expects="0+"
+---
+#@overlay/remove
